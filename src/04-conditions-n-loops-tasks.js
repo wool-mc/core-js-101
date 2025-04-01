@@ -27,13 +27,13 @@
  *  21 => 'Fizz'
  *
  */
-function getFizzBuzz(/* num */) {
-  if (num % 15 == 0) {
-    return ("FizzBuzz");
-  } else if (num % 5 == 0) {
-    return ("Buzz");
-  } else if (num % 3 == 0) {
-    return ("Fizz");
+function getFizzBuzz(num) {
+  if (num % 15 === 0) {
+    return ('FizzBuzz');
+  } else if (num % 5 === 0) {
+    return ('Buzz');
+  } else if (num % 3 === 0) {
+    return ('Fizz');
   } else {
     return (num);
   }
@@ -52,11 +52,12 @@ function getFizzBuzz(/* num */) {
  *   5  => 120
  *   10 => 3628800
  */
-function getFactorial(/* n */) {
-  let result = 1
-  for (i = 1; i <= n; i++) {
+function getFactorial(n) {
+  let result = 1;
+  for (let i = 1; i <= n; i++) {
     result *= i;
   }
+  return result;
   throw new Error('Not implemented');
 }
 
@@ -221,7 +222,7 @@ function getIntervalString(/* a, b, isStartIncluded, isEndIncluded */) {
  * 'rotator' => 'rotator'
  * 'noon' => 'noon'
  */
-function reverseString(/* str */) {
+function reverseString(str) {
   return str.split('').reverse().join('');
   throw new Error('Not implemented');
 }
@@ -239,7 +240,7 @@ function reverseString(/* str */) {
  *   87354 => 45378
  *   34143 => 34143
  */
-function reverseInteger(/* num */) {
+function reverseInteger(num) {
   const sign = Math.sign(num);
   num = Math.abs(num);
   const reversedNum = parseInt(num.toString().split('').reverse().join(''));
@@ -268,7 +269,7 @@ function reverseInteger(/* num */) {
  *   5436468789016589 => false
  *   4916123456789012 => false
  */
-function isCreditCardNumber(/* ccn */) {
+function isCreditCardNumber(ccn) {
   const ccnS = ccn.toString();
   let sum = 0;
   const parity = (ccnS.length) % 2;

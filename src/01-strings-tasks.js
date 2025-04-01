@@ -85,7 +85,7 @@ function extractNameFromTemplate(value) {
  *   'cat'       => 'c'
  */
 function getFirstChar(value) {
-  return value.slice(0,1);
+  return value.slice(0, 1);
   throw new Error('Not implemented');
 }
 
@@ -150,7 +150,7 @@ function removeFirstOccurrences(str, value) {
  *   '<a>' => 'a'
  */
 function unbracketTag(str) {
-  return str.slice(0,-1);
+  return str.slice(0, -1);
   throw new Error('Not implemented');
 }
 
@@ -186,7 +186,7 @@ function convertToUpperCase(str) {
  *   'info@gmail.com' => ['info@gmail.com']
  */
 function extractEmails(str) {
-  return str.split(";");
+  return str.split(';');
   throw new Error('Not implemented');
 }
 
@@ -252,7 +252,7 @@ function encodeToRot13(/* str */) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-  if (typeof value === 'string' ) {
+  if (typeof value === 'string') {
     return (true);
   } else {
     return (false);
