@@ -20,6 +20,7 @@
  *   5, 5  => 25
  */
 function getRectangleArea(/* width, height */) {
+  return (width * height)
   throw new Error('Not implemented');
 }
 
@@ -36,6 +37,7 @@ function getRectangleArea(/* width, height */) {
  *   0    => 0
  */
 function getCircleCircumference(/* radius */) {
+  return (2 * 3.14 * radius**2)
   throw new Error('Not implemented');
 }
 
@@ -52,6 +54,7 @@ function getCircleCircumference(/* radius */) {
  *  -3, 3  => 0
  */
 function getAverage(/* value1, value2 */) {
+  return ((value1 + value2) / 2)
   throw new Error('Not implemented');
 }
 
@@ -87,6 +90,7 @@ function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
  *   5*x = 0         => 0
  */
 function getLinearEquationRoot(/* a, b */) {
+  return (-b / a)
   throw new Error('Not implemented');
 }
 
@@ -126,6 +130,7 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  *     0     => 0
  */
 function getLastDigit(/* value */) {
+  return (Number(value.substr(-1,1)))
   throw new Error('Not implemented');
 }
 
@@ -142,6 +147,7 @@ function getLastDigit(/* value */) {
  * '-525.5'     => -525.5
  */
 function parseNumberFromString(/* value */) {
+  return (Number(value))
   throw new Error('Not implemented');
 }
 
@@ -181,6 +187,7 @@ function getParallelepipedDiagonal(/* a, b, c */) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(/* num, pow */) {
+  return ((Math.round(num / 10**pow))* 10**pow)
   throw new Error('Not implemented');
 }
 
@@ -202,6 +209,22 @@ function roundToPowerOfTen(/* num, pow */) {
  *   17 => true
  */
 function isPrime(/* n */) {
+  if (n < 2) {
+    return 'false';
+  } else if (n === 2) {
+    return 'true';
+  }
+
+  let i = 2;
+  const sqrt = Math.sqrt(n);
+  while (i <= sqrt) {
+    if (n % i === 0) {
+      return 'false';
+    }
+    i +=1;
+  }
+
+  return 'true';
   throw new Error('Not implemented');
 }
 
@@ -221,6 +244,11 @@ function isPrime(/* n */) {
  *   toNumber(new Number(42), 0) => 42
  */
 function toNumber(/* value, def */) {
+  if (Number(value) != 'NaN') {
+    return (Number(value));
+  } else {
+    return (false)
+  }
   throw new Error('Not implemented');
 }
 
