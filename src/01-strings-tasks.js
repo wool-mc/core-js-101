@@ -54,7 +54,7 @@ function getStringLength(value) {
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
 function getStringFromTemplate(firstName, lastName) {
-  return ('Hello' + ', ' + firstName + ' ' + lastName);
+  return ('Hello' + ', ' + firstName + ' ' + lastName + `!`);
   throw new Error('Not implemented');
 }
 
@@ -69,7 +69,7 @@ function getStringFromTemplate(firstName, lastName) {
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(value) {
-  return value.slice(7);
+  return value.slice(7, value.length - 1);
   throw new Error('Not implemented');
 }
 
@@ -101,7 +101,7 @@ function getFirstChar(value) {
  *   '\tHello, World! ' => 'Hello, World!'
  */
 function removeLeadingAndTrailingWhitespaces(value) {
-  return value.trimStart;
+  return value.trim();
   throw new Error('Not implemented');
 }
 
@@ -150,8 +150,7 @@ function removeFirstOccurrences(str, value) {
  *   '<a>' => 'a'
  */
 function unbracketTag(str) {
-  return str.slice(0, -1);
-  throw new Error('Not implemented');
+  return str.slice(1, str.length - 1);
 }
 
 
@@ -166,8 +165,7 @@ function unbracketTag(str) {
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
 function convertToUpperCase(str) {
-  return str.toUpperCase;
-  throw new Error('Not implemented');
+  return str.toUpperCase();
 }
 
 /**
@@ -252,12 +250,10 @@ function encodeToRot13(/* str */) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-  if (typeof value === 'string') {
-    return (true);
-  } else {
-    return (false);
+  if (typeof value === 'string' || value instanceof String) {
+    return true;
   }
-  throw new Error('Not implemented');
+  return false
 }
 
 
