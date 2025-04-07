@@ -800,8 +800,8 @@ describe('03-arrays-tasks', () => {
     [
       {
         arr: [[1, 2], [3, 4], [5, 6]],
-        indexes: [0, 0],
-        expected: 1,
+        indexes: [2, 1],
+        expected: 6,
       }, {
         arr: ['one', 'two', 'three'],
         indexes: [2],

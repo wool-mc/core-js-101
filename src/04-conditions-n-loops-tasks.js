@@ -74,8 +74,12 @@ function getFactorial(n) {
  *   5,10  =>  45 ( = 5+6+7+8+9+10 )
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
-function getSumBetweenNumbers(/* n1, n2 */) {
-  throw new Error('Not implemented');
+function getSumBetweenNumbers(n1, n2) {
+  let sum = n1;
+  for (let i = n1 +1; i <= n2; i++) {
+    sum += i
+  }
+  return sum;
 }
 
 
@@ -178,8 +182,20 @@ function isInsideCircle(/* circle, point */) {
  *   'abracadabra'  => 'c'
  *   'entente' => null
  */
-function findFirstSingleChar(/* str */) {
-  throw new Error('Not implemented');
+function findFirstSingleChar(str) {
+  const charCount = new Map();
+  
+  for (const char of str) {
+    charCount.set(char, (charCount.get(char) || 0) + 1);
+  }
+  
+  for (const char of str) {
+    if (charCount.get(char) === 1) {
+      return char;
+    }
+  }
+  
+  return null;
 }
 
 
@@ -245,7 +261,6 @@ function reverseInteger(num) {
   num = Math.abs(num);
   const reversedNum = parseInt(num.toString().split('').reverse().join(''));
   return reversedNum * sign;
-  throw new Error('Not implemented');
 }
 
 
@@ -284,7 +299,6 @@ function isCreditCardNumber(ccn) {
     sum += digit;
   }
   return Number(sum % 10) === 0;
-  throw new Error('Not implemented');
 }
 
 /**
@@ -301,8 +315,19 @@ function isCreditCardNumber(ccn) {
  *   10000 ( 1+0+0+0+0 = 1 ) => 1
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
-function getDigitalRoot(/* num */) {
-  throw new Error('Not implemented');
+function getDigitalRoot(num) {
+  for ( ; num > 9; ) {
+    num = Array.from(num.toString()).reduce((x, y) => Number(x) + Number(y), 0);
+  }
+return num;
+  // let str = num.toString();
+  // let sum = Array.from(str).reduce((x, y) => Number(x) + Number(y), 0);
+
+  // if (sum > 9) {
+  //   return Array.from(sum.toString()).reduce((x, y) => Number(x) + Number(y), 0);
+  // }
+
+  // return sum;
 }
 
 

@@ -129,8 +129,8 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  *     0     => 0
  */
 function getLastDigit(value) {
-  return Number(value.substr(-1, 1));
-  throw new Error('Not implemented');
+  let strValue = value.toString();
+  return strValue.substring(strValue.length - 1, strValue.length + 1);
 }
 
 
@@ -209,9 +209,9 @@ function roundToPowerOfTen(num, pow) {
  */
 function isPrime(n) {
   if (n < 2) {
-    return 'false';
+    return false;
   } else if (n === 2) {
-    return 'true';
+    return true;
   }
 
   let i = 2;
@@ -224,7 +224,6 @@ function isPrime(n) {
   }
 
   return true;
-  throw new Error('Not implemented');
 }
 
 /**
@@ -249,7 +248,6 @@ function toNumber(value, def) {
   } else {
     return num;
   }
-  throw new Error('Not implemented');
 }
 
 module.exports = {
